@@ -23,3 +23,18 @@ inventory = {
     'ALN007': [11],
     'ALN008': [12],
 }
+
+def menu():
+    print("\n--Digital Melody's--")
+    print("1) Stock by genre.")
+    print("2) Search by release year.")
+    print("3) Update stock.")
+    print("4) Quit.")
+
+while True:
+    try:
+        menu()
+        opt = int(input("Insert an option: "))
+        break
+    except ValueError:
+        print("Invalid option, try again.")
