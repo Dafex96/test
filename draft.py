@@ -24,7 +24,7 @@ inventory = {
     'ALN008': [12],
 }
 
-def menu():
+def music_menu():
     print("\n--Digital Melody's--")
     print("1) Stock by genre.")
     print("2) Search by release year.")
@@ -33,8 +33,12 @@ def menu():
 
 while True:
     try:
-        menu()
+        music_menu()
         opt = int(input("Insert an option: "))
         break
     except ValueError:
         print("Invalid option, try again.")
+
+if opt == 1:
+    print("Filtering the stock by genre...")
+    genre = input("Insert a genre: ")
