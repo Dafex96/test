@@ -31,14 +31,22 @@ def music_menu():
     print("3) Update stock.")
     print("4) Quit.")
 
+def genre_menu():
+    print("\n--Genre Menu--")
+    print("1) Rock")
+    print("2) Pop")
+    print("3) Rap")
+
 while True:
     try:
         music_menu()
+        
         opt = int(input("Insert an option: "))
-        break
+        
+        
+        
+        
+        
+        
     except ValueError:
         print("Invalid option, try again.")
-
-if opt == 1:
-    print("Filtering the stock by genre...")
-    genre = input("Insert a genre: ")
