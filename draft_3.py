@@ -16,6 +16,7 @@ while True:
     opt = int(input("Insert an option: "))
     
     if opt == 1:
+        
         print("Save")
         quantity = int(input("Insert how many movies do you want to save: "))
         for i in range (1,quantity+1):
@@ -26,16 +27,38 @@ while True:
                 "name": name,
                 "year": year
             })
+            
     elif opt == 2:
+        
         print("Show")
         for index,movie in enumerate(movies):
-            print(f"{index+1} - {movie["name"]} - {movie["year"]}" )
+            print(f"{index+1} - {movie['name']} - {movie['year']}" )
+            
     elif opt == 3:
+        
         print("Delete")
+        for index, movie in enumerate(movies):
+            print(f"{index+1} - {movie['name']} - {movie['year']}")
+            to_delete = int(input("Enter the number of the movie to delete: "))
+            if 1 <= to_delete <= len(movies):
+                deleted = movies.pop(to_delete - 1)
+                print(f"Deleted: {deleted['name']}")
+            else:
+                print("Invalid number.")
+                
     elif opt == 4:
         print("Search")
+        search_name = input("Enter the name of the movie to search: ").lower()
+        found = False
+        for movie in movies:
+            if search_name in movie['name'].lower():
+                print(f"{movie['name']} - {movie['year']}")
+                found = True
+            if not found:
+                print("Movie not found.")
+        
     elif opt == 5:
         print("Quit")
+        break
     else:
         print("Invalid option, try again.")
-        break
